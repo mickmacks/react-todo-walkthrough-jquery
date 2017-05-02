@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Brush Script MT", cursive;
+  font-family: "Georgia", serif;
 }
 
 header, .todos {
@@ -12,7 +12,7 @@ header, .todos {
 }
 
 h1, h2{
-  font-family: "Brush Script MT", cursive;
+  font-family: "Georgia", serif;
 }
 
 h2 {
@@ -21,7 +21,7 @@ h2 {
 }
 
 p {
-  font-family: "Brush Script MT", cursive;
+  font-family: "Georgia", serif;
   font-size: 2em;
 }
 

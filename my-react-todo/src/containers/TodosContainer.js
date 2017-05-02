@@ -35,6 +35,15 @@ class TodosContainer extends Component {
 		})
 
 	}
+	deleteTodo(todo) {
+		console.log('deleteing todo', todo)
+		TodoModel.delete(todo).then((res) => {
+			let todos = this.state.todos.filter(function(todo){
+				return todo._id !== res._id  // todo is same as res - so only returns in array what has different ID
+			});
+			this.setState({todos})
+		})
+	}
 
 	render() {
 
@@ -45,6 +54,7 @@ class TodosContainer extends Component {
 				 createTodo={this.createTodo.bind(this)}/>
 		        <TodoList
 		          todos={this.state.todos}
+		          onDeleteTodo={this.deleteTodo.bind(this)}
 		       	/>
 			</div>
 
