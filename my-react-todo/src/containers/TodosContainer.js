@@ -35,6 +35,17 @@ class TodosContainer extends Component {
 		})
 
 	}
+
+	updateTodo(newTodo){
+		console.log(newTodo)
+
+		// get/store newTodo id
+		// store or format the newTodo like in createTodo
+		// find a match in TodoModel.update(todo) 
+		// run the TodoModel.update(todo) function 
+		// set the new state
+	}
+
 	deleteTodo(todo) {
 		console.log('deleteing todo', todo)
 		TodoModel.delete(todo).then((res) => {
@@ -54,6 +65,10 @@ class TodosContainer extends Component {
 				 createTodo={this.createTodo.bind(this)}/>
 		        <TodoList
 		          todos={this.state.todos}
+		      		{/* create onUpdateTodo property (prop) in TodoList,
+		      			setting the prop value to updateTodo,
+		      			binding this to the TodosContainer 'this' */}
+		          onUpdateTodo={this.updateTodo.bind(this)}
 		          onDeleteTodo={this.deleteTodo.bind(this)}
 		       	/>
 			</div>
