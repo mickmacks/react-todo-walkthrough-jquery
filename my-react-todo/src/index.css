@@ -25,7 +25,17 @@ p {
   font-size: 2em;
 }
 
+
+
 /*  C L A S S E S  */
+
+.todoTile {
+
+  margin-bottom: 40px;
+  padding: 10px 0px 40px 0px;
+  background-color: #c0ffee;
+
+}
 
 .todosContainer {
   width: 60%;
