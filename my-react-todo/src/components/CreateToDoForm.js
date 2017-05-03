@@ -30,7 +30,7 @@ class CreateTodoForm extends Component {
   	render(){
 	    return (
 	      <div className='createForm todoForm'>
-	        <h2>Create Todo Here!</h2>
+	        <h1>Create Todo Here!</h1>
 	        <form onSubmit={event => this.onFormSubmit(event)}>
 	          <input
 	          	onChange={event => this.onInputChange(event)}
