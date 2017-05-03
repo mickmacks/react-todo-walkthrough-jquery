@@ -36,14 +36,12 @@ class TodosContainer extends Component {
 
 	}
 
-	updateTodo(newTodo){
-		console.log(newTodo)
-
-		// get/store newTodo id
-		// store or format the newTodo like in createTodo
-		// find a match in TodoModel.update(todo) 
-		// run the TodoModel.update(todo) function 
-		// set the new state
+	updateTodo(newTodoBody, id){
+		TodoModel.update(newTodoBody, id).then((res) => {
+			let targetTodo = this.state.todos.find(todo => todo._id === id)
+			targetTodo.body=res.body
+			this.setState()
+		})
 	}
 
 	deleteTodo(todo) {
@@ -55,7 +53,7 @@ class TodosContainer extends Component {
 			this.setState({todos})
 		})
 	}
-
+t
 	render() {
 
 		return (
@@ -65,9 +63,6 @@ class TodosContainer extends Component {
 				 createTodo={this.createTodo.bind(this)}/>
 		        <TodoList
 		          todos={this.state.todos}
-		      		{/* create onUpdateTodo property (prop) in TodoList,
-		      			setting the prop value to updateTodo,
-		      			binding this to the TodosContainer 'this' */}
 		          onUpdateTodo={this.updateTodo.bind(this)}
 		          onDeleteTodo={this.deleteTodo.bind(this)}
 		       	/>

@@ -16,6 +16,14 @@ class TodoModel {
 		})
 		return request
 	}
+	static update(newTodoBody, id){
+		let request = $.ajax({
+			url: "http://super-crud.herokuapp.com/todos/" + id,
+			method: 'PUT',
+			data: {body: newTodoBody}
+		})
+		return request
+	}
 	static delete(todo){
 		let request = $.ajax({
 			url: "http://super-crud.herokuapp.com/todos/" + todo._id,

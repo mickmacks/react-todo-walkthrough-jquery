@@ -13,7 +13,9 @@ class Todo extends Component {
 						(X)
 						</span>
 				</p>
-				<EditTodoForm onSubmit={() => this.props.onUpdateTodo(this.props.todo)}
+				<EditTodoForm 
+					todo={this.props.todo} 
+					onUpdateTodo={this.props.onUpdateTodo}
 				/>
 			</div>
 		)
